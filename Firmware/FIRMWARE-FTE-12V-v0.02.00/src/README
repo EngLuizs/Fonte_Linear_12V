@@ -1,0 +1,204 @@
+# FLM Systems — Fonte Linear 12V Monitor
+
+Monitor de tensão, corrente e potência em tempo real para fonte de bancada linear 12V, baseado em ESP32 com interface web e display LCD 20x4.
+
+---
+
+## Visão Geral
+
+O sistema realiza leituras do ADC do ESP32, aplica calibração linear de dois pontos e exibe os dados tanto no display LCD quanto em uma página web acessível via Wi-Fi (modo Access Point). A interface web oferece leitura em tempo real e gráficos históricos das três grandezas monitoradas.
+
+---
+
+## Estrutura de Arquivos
+
+```
+projeto/
+├── main.cpp        # Lógica principal: setup, loop, leitura ADC, LCD, servidor web
+├── html.h          # Página web embutida (INDEX_HTML em PROGMEM)
+├── images.h        # Declarações extern dos arrays de imagem PNG
+└── images.cpp      # Arrays PNG em PROGMEM: logo FLM Systems e imagem da fonte
+```
+
+---
+
+## Hardware
+
+### Microcontrolador
+
+- **ESP32** (qualquer variante com ADC de 12 bits e suporte a Wi-Fi)
+
+### Pinagem
+
+| Pino ESP32 | Função              |
+|-----------|---------------------|
+| GPIO 16   | SDA — LCD I2C       |
+| GPIO 19   | SCL — LCD I2C       |
+| GPIO 33   | Leitura de Tensão (ADC) |
+| GPIO 34   | Leitura de Corrente (ADC) |
+| GPIO 5    | LED Vermelho (sobrecarga) |
+| GPIO 23   | LED Verde (operação normal) |
+
+### Display
+
+- LCD 20x4 com módulo I2C (endereço padrão `0x27`)
+
+### Circuito de Medição
+
+**Tensão:**
+Divisor resistivo que escala a tensão de saída da fonte (até ~15 V) para a faixa 0–3,3 V do ADC. O fator de escala configurado é `12` (ajustável via `fator_tensao`).
+
+**Corrente:**
+Resistor shunt de `0,68 Ω` em série com a carga. A tensão sobre o shunt é lida pelo ADC e convertida em corrente.
+
+---
+
+## Configuração de Rede
+
+O ESP32 opera como **Access Point (AP)**:
+
+| Parâmetro | Valor padrão    |
+|-----------|-----------------|
+| SSID      | `FLM_FTE12V`    |
+| Senha     | `12345678`      |
+| Porta     | `80`            |
+
+O IP do AP é exibido no LCD durante a inicialização.
+
+---
+
+## Calibração
+
+A calibração é feita por **regressão linear de dois pontos**, separadamente para tensão e corrente. Os coeficientes `a` e `b` (da equação `y = ax + b`) são calculados automaticamente em tempo de compilação com base nos pontos definidos no código.
+
+### Tensão — ajuste em `main.cpp`
+
+```cpp
+float V1_real = 5.0;    // Valor real medido com multímetro (V)
+float V1_adc  = 3.65;   // Valor lido pelo ADC convertido (V)
+
+float V2_real = 14.18;
+float V2_adc  = 12.87;
+```
+
+### Corrente — ajuste em `main.cpp`
+
+```cpp
+float I1_real = 0.25;   // Corrente real (A)
+float I1_adc  = 0.098;  // Corrente calculada pelo ADC (A)
+
+float I2_real = 0.9;
+float I2_adc  = 0.782;
+```
+
+Para recalibrar, meça dois pontos de operação com instrumentos de referência e substitua os valores acima.
+
+---
+
+## Offset de Corrente
+
+Na inicialização (sem carga conectada), o sistema realiza **200 leituras do shunt** para calcular e compensar o offset DC do ADC, eliminando corrente residual em repouso.
+
+---
+
+## Filtro de Leitura
+
+Cada leitura do ADC é a **média de 60 amostras** com intervalo de 277 µs entre elas (~16,6 ms total = exatamente 1 ciclo de 60 Hz), suprimindo ruído da rede elétrica.
+
+---
+
+## Thresholds de Zeragem
+
+Valores abaixo dos limites abaixo são forçados a zero para evitar exibição de ruído:
+
+| Grandeza | Limiar    |
+|----------|-----------|
+| Corrente | < 0,160 A |
+| Tensão   | < 1,4 V   |
+
+---
+
+## LEDs de Status
+
+| LED     | Condição                  |
+|---------|---------------------------|
+| Verde   | Corrente < 1,5 A (normal) |
+| Vermelho| Corrente ≥ 1,5 A (carga alta) |
+
+---
+
+## Interface Web
+
+Acesse `http://<IP_do_AP>` em qualquer navegador após conectar-se à rede Wi-Fi do ESP32.
+
+### Endpoints
+
+| Rota        | Descrição                              |
+|-------------|----------------------------------------|
+| `/`         | Página principal (HTML + JS)           |
+| `/dados`    | JSON com `v`, `i`, `p` (polling 1 s)  |
+| `/logo.png` | Logotipo FLM Systems                   |
+| `/fonte.png`| Imagem da fonte de bancada             |
+
+### Funcionalidades da Interface
+
+- Exibição em tempo real de tensão, corrente e potência
+- Tela de gráficos com histórico dos últimos 40 pontos por grandeza
+- Navegação entre tela principal e tela de gráficos
+- Layout responsivo (mobile e desktop)
+
+---
+
+## Dependências (Bibliotecas Arduino)
+
+| Biblioteca           | Uso                        |
+|----------------------|----------------------------|
+| `Wire`               | Comunicação I2C com o LCD  |
+| `LiquidCrystal_I2C`  | Controle do display LCD    |
+| `WiFi`               | Modo Access Point          |
+| `WebServer`          | Servidor HTTP na porta 80  |
+
+Instale as bibliotecas via **Arduino IDE → Gerenciador de Bibliotecas** ou via **PlatformIO**.
+
+---
+
+## Compilação e Upload
+
+### Arduino IDE
+
+1. Instale o suporte ao ESP32 via Boards Manager (`espressif/arduino-esp32`)
+2. Selecione a placa correta em **Ferramentas → Placa**
+3. Adicione todos os arquivos (`.cpp`, `.h`) na mesma pasta do sketch
+4. Compile e faça o upload normalmente
+
+### PlatformIO
+
+```ini
+[env:esp32dev]
+platform = espressif32
+board = esp32dev
+framework = arduino
+lib_deps =
+    marcoschwartz/LiquidCrystal_I2C
+```
+
+---
+
+## Parâmetros Ajustáveis
+
+| Variável        | Localização  | Descrição                             |
+|-----------------|-------------|---------------------------------------|
+| `Vref`          | `main.cpp`  | Tensão de referência do ADC (3,3 V)   |
+| `fator_tensao`  | `main.cpp`  | Ganho do divisor resistivo de tensão  |
+| `Rshunt`        | `main.cpp`  | Resistência do shunt de corrente (Ω)  |
+| `N_AMOSTRAS`    | `main.cpp`  | Quantidade de amostras por leitura    |
+| `ssid`          | `main.cpp`  | Nome da rede Wi-Fi AP                 |
+| `password`      | `main.cpp`  | Senha da rede Wi-Fi AP                |
+
+---
+
+## Desenvolvedores
+
+Luiz H. · Felipe C. · Vinicius S. · Maycon B. · Luis Z.
+
+**© 2026 FLM Systems. Todos os direitos reservados.**
