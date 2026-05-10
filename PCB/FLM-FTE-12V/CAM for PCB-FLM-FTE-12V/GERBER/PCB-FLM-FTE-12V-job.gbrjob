@@ -3,9 +3,9 @@
     "GenerationSoftware": {
       "Vendor": "KiCad",
       "Application": "Pcbnew",
-      "Version": "10.0.0"
+      "Version": "10.0.1"
     },
-    "CreationDate": "2026-05-08T14:32:24-03:00"
+    "CreationDate": "2026-05-10T17:07:14-03:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -39,14 +39,14 @@
       "FilePolarity": "Positive"
     },
     {
-      "Path": "PCB-FLM-FTE-12V-Top Silkscreen.gto",
-      "FileFunction": "Legend,Top",
-      "FilePolarity": "Positive"
-    },
-    {
       "Path": "PCB-FLM-FTE-12V-Bottom Mask.gbs",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
+    },
+    {
+      "Path": "PCB-FLM-FTE-12V-Edge_Cuts.gm1",
+      "FileFunction": "Profile",
+      "FilePolarity": "Positive"
     }
   ],
   "MaterialStackup": [

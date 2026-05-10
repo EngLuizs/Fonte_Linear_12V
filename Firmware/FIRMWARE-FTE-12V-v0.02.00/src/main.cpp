@@ -1,4 +1,4 @@
-//==============================================================================
+//=======================================================================================
 //	PROJETO     : FONTE LINEAR AJUSTAVEL 12V 1A COM MONITORAMENTO
 //	EQUIPE      : FLM SYSTEMS
 //	COMPILADOR  : VISUAL STUDIO CODE (1.116.0) + PLATFORMIO
@@ -7,7 +7,7 @@
 //	REVISAO		  : 01/05/2026
 //	VERSÃO      : 0.02.00
 //  OBS: Implementação do web server com o esp32, possibilitando a criação do site.
-//****************************************************************************/
+//***************************************************************************************/
 
 // ================ INCLUSÃO DE BIBLIOTECAS ================
   #include <Arduino.h>
