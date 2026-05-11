@@ -4052,7 +4052,7 @@
 				)
 			)
 		)
-		(property "Value" "+15V"
+		(property "Value" "+18V"
 			(at 124.46 133.096 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4372,7 +4372,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100uF/25V"
+		(property "Value" "100uF/50V"
 			(at 136.398 159.004 90)
 			(show_name no)
 			(do_not_autoplace no)

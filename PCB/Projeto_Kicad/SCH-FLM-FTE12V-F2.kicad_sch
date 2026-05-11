@@ -2341,16 +2341,16 @@
 		(uuid "625322bb-07e0-4b54-9950-edfef002d9f4")
 	)
 	(junction
+		(at 266.7 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "00cf93df-ccc5-42aa-bb5d-8d8830265df1")
+	)
+	(junction
 		(at 186.69 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0dcc4d86-00bc-40ea-8dbf-93d95d915189")
-	)
-	(junction
-		(at 299.72 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "18c35221-110a-4895-933d-88b650d37d34")
 	)
 	(junction
 		(at 220.98 154.94)
@@ -2387,12 +2387,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6322847c-d853-484f-b7e2-4b664e9b6dc1")
-	)
-	(junction
-		(at 266.7 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "725256b2-7c3d-4202-bc13-ed55c8eaa029")
 	)
 	(junction
 		(at 168.91 154.94)
@@ -2453,6 +2447,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e0b32883-f9eb-4069-a88c-925b3e39699b")
+	)
+	(junction
+		(at 299.72 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e766918c-f789-43b6-abdf-7573ed48464e")
 	)
 	(junction
 		(at 199.39 139.7)
@@ -2628,6 +2628,16 @@
 	)
 	(wire
 		(pts
+			(xy 279.4 128.27) (xy 287.02 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c5c14e1-4788-4391-a0f8-d98151e5bf7e")
+	)
+	(wire
+		(pts
 			(xy 196.85 154.94) (xy 199.39 154.94)
 		)
 		(stroke
@@ -2778,13 +2788,23 @@
 	)
 	(wire
 		(pts
-			(xy 266.7 128.27) (xy 275.59 128.27)
+			(xy 266.7 128.27) (xy 271.78 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "89be2df9-c171-46b8-b27c-6f62468387b4")
+	)
+	(wire
+		(pts
+			(xy 294.64 128.27) (xy 299.72 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89f40fc3-3c97-496a-b59c-d4ead725f80d")
 	)
 	(wire
 		(pts
@@ -2995,16 +3015,6 @@
 			(type default)
 		)
 		(uuid "e20ab6c5-ee04-48b6-8494-38a6e17598c2")
-	)
-	(wire
-		(pts
-			(xy 283.21 128.27) (xy 299.72 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e802195a-2466-459e-ba96-c05708513b6c")
 	)
 	(wire
 		(pts
@@ -3296,7 +3306,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4700uF/25V"
+		(property "Value" "4700uF/35V"
 			(at 179.07 143.256 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3862,7 +3872,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 279.4 128.27 90)
+		(at 290.83 128.27 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3870,9 +3880,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "8d305f00-8b81-46b8-ba4d-d7c7fc37e70f")
-		(property "Reference" "R2"
-			(at 278.892 125.476 90)
+		(uuid "73af69fd-0100-4eae-be09-65e47013f339")
+		(property "Reference" "R4"
+			(at 290.322 125.476 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3881,8 +3891,8 @@
 				)
 			)
 		)
-		(property "Value" "0,44R/5W"
-			(at 279.4 130.81 90)
+		(property "Value" "0,22R/5W"
+			(at 290.83 130.81 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3892,7 +3902,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0516_L15.5mm_D5.0mm_P5.08mm_Vertical"
-			(at 279.654 127.254 90)
+			(at 291.084 127.254 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3903,7 +3913,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 279.4 128.27 0)
+			(at 290.83 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3914,7 +3924,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 279.4 128.27 0)
+			(at 290.83 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3925,7 +3935,97 @@
 			)
 		)
 		(property "ALTIUM_VALUE" ""
-			(at 279.4 128.27 90)
+			(at 290.83 128.27 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "c9bf7034-6016-4567-a635-6ebd6fffdb22")
+		)
+		(pin "1"
+			(uuid "1b80c3c7-fec4-4ecc-b447-686282950cf4")
+		)
+		(instances
+			(project "PCB-FLM-FTE-12V"
+				(path "/24c863d3-5da9-46c2-adf2-885da2a6f9d5/4761fa84-89f9-48c7-be1e-a8eadc20ef8c"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 275.59 128.27 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8d305f00-8b81-46b8-ba4d-d7c7fc37e70f")
+		(property "Reference" "R2"
+			(at 275.082 125.476 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.5 1.5)
+				)
+			)
+		)
+		(property "Value" "0,33R/5W"
+			(at 275.59 130.81 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.5 1.5)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0516_L15.5mm_D5.0mm_P5.08mm_Vertical"
+			(at 275.844 127.254 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 275.59 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 275.59 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ALTIUM_VALUE" ""
+			(at 275.59 128.27 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4069,7 +4169,7 @@
 				)
 			)
 		)
-		(property "Value" "+15V"
+		(property "Value" "+18V"
 			(at 188.976 119.38 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4689,7 +4789,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4700uF/25V"
+		(property "Value" "4700uF/35V"
 			(at 187.96 143.256 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4791,7 +4891,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "11K"
 			(at 219.202 146.304 0)
 			(show_name no)
 			(do_not_autoplace no)
