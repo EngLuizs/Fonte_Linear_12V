@@ -1871,7 +1871,7 @@
 		)
 		(uuid "00e0154c-0096-4c4a-836b-ef4ff7998fee")
 	)
-	(text "STEP DOWN 15V - 12V"
+	(text "STEP DOWN 18V - 12V"
 		(exclude_from_sim no)
 		(at 153.67 125.73 0)
 		(effects
