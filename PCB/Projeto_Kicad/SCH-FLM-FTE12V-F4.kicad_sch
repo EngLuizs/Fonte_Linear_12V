@@ -3574,6 +3574,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 227.33) (xy 129.54 227.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00cfcbf2-67db-47bb-af52-e54557d02a5f")
+	)
+	(wire
+		(pts
 			(xy 224.79 172.72) (xy 224.79 180.34)
 		)
 		(stroke
@@ -3694,7 +3704,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 227.33) (xy 91.44 227.33)
+			(xy 97.79 227.33) (xy 91.44 227.33)
 		)
 		(stroke
 			(width 0)
@@ -3861,16 +3871,6 @@
 			(type default)
 		)
 		(uuid "4d9b731b-6af2-496c-9b8b-4b3b283a93e0")
-	)
-	(wire
-		(pts
-			(xy 113.03 227.33) (xy 129.54 227.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "512a1501-e968-4334-ac40-4971e2720294")
 	)
 	(wire
 		(pts
@@ -4051,6 +4051,16 @@
 			(type default)
 		)
 		(uuid "8bcfdf6e-71c8-4d3a-a8ff-4c9949b9cdfa")
+	)
+	(wire
+		(pts
+			(xy 105.41 227.33) (xy 113.03 227.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d9f3498-a4b2-40ab-99c9-b836464c2847")
 	)
 	(wire
 		(pts
@@ -5353,6 +5363,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_US")
+		(at 116.84 227.33 90)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "103f60d6-81f0-4fee-9231-cfdb0ba5f2af")
+		(property "Reference" "RF2"
+			(at 116.84 230.124 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.5 1.5)
+				)
+			)
+		)
+		(property "Value" "15K"
+			(at 116.84 224.536 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.5 1.5)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
+			(at 117.094 228.346 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 227.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 116.84 227.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f39d4ad6-3dd6-4ff2-a5be-37752cd35acc")
+		)
+		(pin "2"
+			(uuid "c2b38ef9-3ca7-4dd8-ae78-f1b8522a4f10")
+		)
+		(instances
+			(project "PCB-FLM-FTE-12V"
+				(path "/24c863d3-5da9-46c2-adf2-885da2a6f9d5/d196a6d6-d89b-4d92-bbb9-3bc0a8b87648"
+					(reference "RF2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "SCH-DISCRETO:PW+_BAR")
 		(at 64.77 166.37 0)
 		(unit 1)
@@ -5973,7 +6063,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 109.22 227.33 90)
+		(at 101.6 227.33 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -5984,7 +6074,7 @@
 		(dnp no)
 		(uuid "51e25e64-d966-4b37-93a7-c80528c26fb4")
 		(property "Reference" "RF1"
-			(at 109.22 230.124 90)
+			(at 101.6 230.124 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5993,8 +6083,8 @@
 				)
 			)
 		)
-		(property "Value" "10K"
-			(at 109.22 224.536 90)
+		(property "Value" "15K"
+			(at 101.6 224.536 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6004,7 +6094,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
-			(at 109.474 228.346 90)
+			(at 101.854 228.346 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6015,7 +6105,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 227.33 0)
+			(at 101.6 227.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6026,7 +6116,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 109.22 227.33 0)
+			(at 101.6 227.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

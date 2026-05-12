@@ -51,7 +51,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.0
+          "min_clearance": 0.75
         }
       },
       "diff_pair_dimensions": [
@@ -796,7 +796,7 @@
         "uuid": "24c863d3-5da9-46c2-adf2-885da2a6f9d5"
       }
     ],
-    "used_designators": "R4",
+    "used_designators": "R4,R7,RF2",
     "variants": []
   },
   "sheets": [
