@@ -3,9 +3,9 @@
     "GenerationSoftware": {
       "Vendor": "KiCad",
       "Application": "Pcbnew",
-      "Version": "10.0.1"
+      "Version": "10.0.0"
     },
-    "CreationDate": "2026-05-10T17:07:14-03:00"
+    "CreationDate": "2026-05-12T12:02:40-03:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -34,9 +34,29 @@
   ],
   "FilesAttributes": [
     {
+      "Path": "PCB-FLM-FTE-12V-Top Layer.gtl",
+      "FileFunction": "Copper,L1,Top",
+      "FilePolarity": "Positive"
+    },
+    {
       "Path": "PCB-FLM-FTE-12V-Bottom Layer.gbl",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
+    },
+    {
+      "Path": "PCB-FLM-FTE-12V-Top Silkscreen.gto",
+      "FileFunction": "Legend,Top",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "PCB-FLM-FTE-12V-Bottom Silkscreen.gbo",
+      "FileFunction": "Legend,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "PCB-FLM-FTE-12V-Top Mask.gts",
+      "FileFunction": "SolderMask,Top",
+      "FilePolarity": "Negative"
     },
     {
       "Path": "PCB-FLM-FTE-12V-Bottom Mask.gbs",

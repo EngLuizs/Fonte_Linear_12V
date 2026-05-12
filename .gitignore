@@ -27,6 +27,7 @@ fp-info-cache
 
 # Preferências locais do usuário
 *.kicad_prl
+*.plotacao
 
 # Backups automáticos
 *-backups/
