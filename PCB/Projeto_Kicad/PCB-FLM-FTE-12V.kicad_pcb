@@ -113,7 +113,7 @@
 			(dashed_line_dash_ratio 12)
 			(dashed_line_gap_ratio 3)
 			(svgprecision 6)
-			(plotframeref yes)
+			(plotframeref no)
 			(mode 1)
 			(useauxorigin no)
 			(pdf_front_fp_property_popups yes)
