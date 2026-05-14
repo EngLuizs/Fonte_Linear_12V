@@ -561,7 +561,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "../.plotacao/SVG/",
+      "plot": "//192.168.1.254/wirebus/Usuários/Felipe/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",

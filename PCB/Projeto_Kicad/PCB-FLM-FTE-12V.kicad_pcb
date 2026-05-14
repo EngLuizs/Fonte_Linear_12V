@@ -136,7 +136,7 @@
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "../.plotacao/SVG/")
+			(outputdirectory "//192.168.1.254/wirebus/Usuários/Felipe/")
 		)
 	)
 	(footprint "Package_TO_SOT_THT:TO-220-3_Vertical"
@@ -15189,66 +15189,6 @@
 			)
 		)
 	)
-	(gr_line
-		(start 97.145 91.515)
-		(end 97.135 103.165)
-		(stroke
-			(width 0.15)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "86cafaab-c1a0-4db4-b8c0-9dd0c213f289")
-	)
-	(gr_line
-		(start 99.915 103.075)
-		(end 99.915 91.675)
-		(stroke
-			(width 0.15)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "f9ef2294-aac3-4a8e-a6b7-4406b4f9571b")
-	)
-	(gr_line
-		(start 111.125 72.925)
-		(end 155.865 72.955)
-		(stroke
-			(width 0.15)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "2c41e253-2900-4db7-84e2-52643ad436d2")
-	)
-	(gr_line
-		(start 155.135 101.455)
-		(end 155.135 91.045)
-		(stroke
-			(width 0.15)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "dc92b1ac-e762-462a-8994-5e206326a2ca")
-	)
-	(gr_line
-		(start 158.195 91.225)
-		(end 158.195 101.455)
-		(stroke
-			(width 0.15)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "1d3aedde-b3ee-4471-bb11-c8bbb7c0d82a")
-	)
-	(gr_line
-		(start 161.145 82.175)
-		(end 161.155 101.535)
-		(stroke
-			(width 0.15)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "33e0cda5-7b95-40fb-b581-803702d3a331")
-	)
 	(gr_rect
 		(start 46.706666 33.585333)
 		(end 166.706666 108.585333)
@@ -15276,42 +15216,6 @@
 		(at 57.525 87.535 0)
 		(layer "F.SilkS")
 		(uuid "0d24519e-36a2-423b-9f65-460882a5cf13")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "JP1"
-		(at 93.725 98.485 0)
-		(layer "F.SilkS")
-		(uuid "dbca427f-b742-4fcc-a659-d29de5327aed")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "JP2"
-		(at 100.745 98.485 0)
-		(layer "F.SilkS")
-		(uuid "5ed9b734-cb14-4dbb-bd42-254c1a0efebb")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "JP4"
-		(at 109.625 75.535 0)
-		(layer "F.SilkS")
-		(uuid "f90472a9-1dc9-4875-85c0-1792545164bd")
 		(effects
 			(font
 				(size 1 1)
@@ -15348,42 +15252,6 @@
 		(at 137.325 62.435 0)
 		(layer "F.SilkS")
 		(uuid "b1fb9517-c36a-499c-aaf4-8e1fb2a019a5")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "JP2"
-		(at 153.535 104.015 0)
-		(layer "F.SilkS")
-		(uuid "df74278e-8186-4b8f-952b-c3f460b42c57")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "JP4"
-		(at 154.325 75.435 0)
-		(layer "F.SilkS")
-		(uuid "be579365-a4d3-43cc-90aa-fb357eeb5533")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "JP1"
-		(at 156.685 104.015 0)
-		(layer "F.SilkS")
-		(uuid "765faa50-af85-4d1b-901d-bb21cfb3a1f2")
 		(effects
 			(font
 				(size 1 1)
@@ -15432,18 +15300,6 @@
 		(at 157.125 88.035 0)
 		(layer "F.SilkS")
 		(uuid "407413e7-18e7-4f7b-9fa5-90101fd48995")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "JP3"
-		(at 161.745 92.655 0)
-		(layer "F.SilkS")
-		(uuid "b33c9937-5232-4797-b00f-1772407ee6d3")
 		(effects
 			(font
 				(size 1 1)
