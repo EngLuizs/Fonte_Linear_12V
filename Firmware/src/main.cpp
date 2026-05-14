@@ -31,8 +31,8 @@
 // ================ DEFINIÇÃO DE PINOS ================
   #define SDA_PIN 16
   #define SCL_PIN 19
-  #define PIN_V 33
-  #define PIN_I 34
+  #define PIN_V 34
+  #define PIN_I 33
   #define PIN_LDRED 5
   #define PIN_LDGREEN 23
 
