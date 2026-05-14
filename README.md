@@ -50,7 +50,7 @@ O sistema disponibiliza os dados em tempo real tanto no display LCD quanto em um
 - BC547
 - LCD I2C 20x4
 - Shunt 0.22Ω / 5W 
-- Shunt 0,44Ω / 5W
+- Shunt 0,33Ω / 5W
 
 ---
 
@@ -59,8 +59,8 @@ O sistema disponibiliza os dados em tempo real tanto no display LCD quanto em um
 ```text
 Firmware/       -> Código fonte do ESP32
 PCB/            -> Esquemáticos, PCB e Gerbers
-Documentos/     -> Relatórios e documentação
-Modelagem_3D/   -> Estruturas e peças mecânicas
+Documentação/   -> Relatórios e documentação
+Estrutura/      -> Estruturas e peças mecânicas
 ```
 
 ---
@@ -89,7 +89,7 @@ O ESP32 opera em modo Access Point criando a rede:
 
 ```text
 SSID: FLM_FTE12V
-Senha: 12345678
+Senha: 11110000
 ```
 
 Após conexão, o sistema disponibiliza:

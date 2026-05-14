@@ -22,7 +22,7 @@
 
 // ================ CONFIGURAÇÕES DE REDE ================
   const char* ssid = "FLM_FTE12V";
-  const char* password = "12345678";
+  const char* password = "11110000";
 
 // ================ CONFIGURAÇÕES DO LCD E SERVER ================
   LiquidCrystal_I2C lcd(0x27, 20, 4);
