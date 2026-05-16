@@ -39,7 +39,7 @@
 // ================ PARAMETROS ================
   float Vref = 1.1;          // Referência pura do ESP32 (ADC_0db)
   float fator_tensao = 15.0; // Divisor de tensão (14K + 1K) / 1K
-  float Rshunt = 0.22;       // Valor 
+  float Rshunt = 0.55;       // Valor 
   float ganho_I = 4.0;       // Ganho do AmpOp da corrente )
 
 // ================ CALIBRAÇÃO ================
