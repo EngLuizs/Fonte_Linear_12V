@@ -33,8 +33,8 @@
   #define SCL_PIN 19
   #define PIN_V 34
   #define PIN_I 33
-  #define PIN_LDRED 5
-  #define PIN_LDGREEN 23
+  #define PIN_LDRED 23
+  #define PIN_LDGREEN 5
 
 // ================ PARAMETROS ================
   float Vref = 1.1;          // Referência pura do ESP32 (ADC_0db)
@@ -218,8 +218,8 @@
           // ===== POTENCIA =====
             potenciaAtual = tensaoAtual * correnteAtual;
 
-          digitalWrite(PIN_LDGREEN, correnteAtual < 1.5);
-          digitalWrite(PIN_LDRED, correnteAtual >= 1.5);
+          digitalWrite(PIN_LDRED, correnteAtual < 1.5);
+          digitalWrite(PIN_LDGREEN, correnteAtual >= 1.5);
 
         // ================ ATUALIZAÇÃO DO LCD ================
           lcd.setCursor(0, 0);
