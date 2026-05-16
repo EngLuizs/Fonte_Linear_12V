@@ -218,8 +218,8 @@
           // ===== POTENCIA =====
             potenciaAtual = tensaoAtual * correnteAtual;
 
-          digitalWrite(PIN_LDGREEN, correnteAtual < 1.5);
-          digitalWrite(PIN_LDRED, correnteAtual >= 1.5);
+          digitalWrite(PIN_LDGREEN, correnteAtual < 1.2);
+          digitalWrite(PIN_LDRED, correnteAtual >= 1.2);
 
         // ================ ATUALIZAÇÃO DO LCD ================
           lcd.setCursor(0, 0);
