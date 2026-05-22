@@ -4,8 +4,8 @@
 //	COMPILADOR  : VISUAL STUDIO CODE (1.116.0) + PLATFORMIO
 //	PROCESSADOR : ESP32 WROOM 32E
 //	DATA        : 15/04/2026
-//	REVISAO		  : 01/05/2026
-//	VERSÃO      : 0.02.00
+//	REVISAO		  : 22/05/2026
+//	VERSÃO      : 0.02.01
 //  OBS: Implementação do web server com o esp32, possibilitando a criação do site.
 //***************************************************************************************/
 
@@ -39,28 +39,28 @@
 // ================ PARAMETROS ================
   float Vref = 1.1;          // Referência pura do ESP32 (ADC_0db)
   float fator_tensao = 15.0; // Divisor de tensão (14K + 1K) / 1K
-  float Rshunt = 0.11;       // Valor pode ser alterado para 0,11 - 0,22//0,22
-  float ganho_I = 4.0;       // Ganho do AmpOp da corrente )
+  float Rshunt = 0.22;       // Resistor shunt para medição da corrente 
+  float ganho_I = 4.0;       // Ganho do AmpOp da corrente 
 
 // ================ CALIBRAÇÃO ================
 
   // ===== PONTOS DE CALIBRAÇÃO TENSÃO =====
-    float V1_real = 5.0;
-    float V1_adc  = 3.65;
+    float V1_real = 3.93;
+    float V1_adc  = 3.00;
 
-    float V2_real = 14.18;
-    float V2_adc  = 12.87;
+    float V2_real = 14.26;
+    float V2_adc  = 14.39;
 
     // ===== CALCULO AUTOMATICO =====
       float Va = (V2_real - V1_real) / (V2_adc - V1_adc);
       float Vb = V1_real - Va * V1_adc;
 
   // ===== PONTOS DE CALIBRAÇÃO CORRENTE =====
-    float I1_real = 0.25;
-    float I1_adc  = 0.098;
+    float I1_real = 0.089;
+    float I1_adc  = 0.007;
 
-    float I2_real = 0.9;
-    float I2_adc  = 0.782;
+    float I2_real = 1.1;
+    float I2_adc  = 1.166;
 
     // ===== CALCULO =====
       float Ia = (I2_real - I1_real) / (I2_adc - I1_adc);
@@ -74,7 +74,6 @@
 
 // ================ OFFSET CORRENTE ================
   float offsetShunt = 0;
-
 
 // ================ FILTRO ================
   const int N_AMOSTRAS = 60;
@@ -130,7 +129,7 @@
       lcd.setCursor(0,1); lcd.print(ssid);
       lcd.setCursor(0,2); lcd.print("IP:");
       lcd.setCursor(0,3); lcd.print(IP);
-      delay(5000);
+      delay(2000);
       lcd.clear();
 
     // ==========================================
@@ -168,7 +167,6 @@
 
     // MEDIR OFFSET COM A FONTE SEM CARGA
       lcd.setCursor(0,0); lcd.print("Calculando OFFSET...");
-      delay(1000);
       medirOffset();
       lcd.clear();
   }
@@ -203,23 +201,26 @@
           float Vshunt_real = Vshunt_sem_offset / ganho_I;
           
           //===== TENSÃO E CORRENTE BRUTA =====
-            // Descomente as linhas abaixo para usar os valores sem calibração, apenas com o fator de escala e offset do shunt
+            // Descomente as linhas abaixo para usar os valores sem calibradção, apenas com o fator de escala e offset do shunt
             // tensaoAtual = (Vadc * fator_tensao);
             // correnteAtual = (Vshunt_real / Rshunt);
+                
           
           // ===== LEITURAS CALIBRADAS =====
-            tensaoAtual = (Va * (Vadc * fator_tensao) + Vb);
+            float tensao = (Va * (Vadc * fator_tensao) + Vb);
             correnteAtual = (Ia * (Vshunt_real / Rshunt) + Ib);
 
+          // ===== REMOÇÃO DA QUEDA DE TENSÃO NO RSHUNT =====
+            tensaoAtual = tensao - Vshunt_real;
+
           // ===== ZERAR RUÍDO DA CORRENTE =====
-            // if (correnteAtual < 0.160) correnteAtual = 0;
-            // if (tensaoAtual < 1.4) tensaoAtual = 0;
+            if (correnteAtual < 0.090) correnteAtual = 0;
 
           // ===== POTENCIA =====
             potenciaAtual = tensaoAtual * correnteAtual;
 
-          digitalWrite(PIN_LDGREEN, correnteAtual < 1.2);
-          digitalWrite(PIN_LDRED, correnteAtual >= 1.2);
+          digitalWrite(PIN_LDGREEN, correnteAtual < 1.1);
+          digitalWrite(PIN_LDRED, correnteAtual >= 1.1);
 
         // ================ ATUALIZAÇÃO DO LCD ================
           lcd.setCursor(0, 0);
