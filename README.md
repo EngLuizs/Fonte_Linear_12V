@@ -150,6 +150,6 @@ FLM System
 # Versão Atual
 
 ```text
-Versão Firmware: 0.02.00
+Versão Firmware: 0.02.01
 Última Revisão: 01/05/2026
 ```
