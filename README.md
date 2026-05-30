@@ -58,7 +58,7 @@ O sistema disponibiliza os dados em tempo real tanto no display LCD quanto em um
 
 ```text
 Firmware/       -> Código fonte do ESP32
-PCB/            -> Esquemáticos, PCB e Gerbers
+Hardware/            -> Esquemáticos, PCB e Gerbers
 Documentação/   -> Relatórios e documentação
 Estrutura/      -> Estruturas e peças mecânicas
 ```
